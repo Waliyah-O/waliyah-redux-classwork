@@ -18,7 +18,14 @@ const CardComponent = ({ product }) => {
   // };
 
   return (
-    <div>
+    <div
+      style={{
+        height: "400px",
+        width: "250px",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>{product[displayedPrice]}</p>
