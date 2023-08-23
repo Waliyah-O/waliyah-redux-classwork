@@ -1,18 +1,19 @@
+import { useDispatch, useSelector } from "react-redux";
 
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { changeCurrency } from '../redux/slices/textSlice';
+import { changePrice } from "../redux/slices/priceSlice";
 
-const ChangeTextButton = () => {
+const ChangeTextButton = ({ buttonText }) => {
   const dispatch = useDispatch();
 
-  const handleChangeText = () => {
-    dispatch(changeCurrency('New Text from Button'));
+  const textToChange = useSelector((state) => state.product.text);
+
+  const handlePriceChange = (changedText) => {
+    dispatch(changePrice(changedText))
   };
 
   return (
     <div>
-      <button onClick={handleChangeText}>Change Text</button>
+      <button onClick={() => handlePriceChange('naira')}>{buttonText}</button>
     </div>
   );
 };

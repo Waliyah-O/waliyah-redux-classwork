@@ -1,23 +1,24 @@
-import { addToCart } from "../redux/slices/cartSlice";
-import { container, wrapper, images } from "./ComponentStyles";
+// src/components/ProductCard.js
+
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toggleDisplayedPrice } from "../redux/slices/productSlice";
 
-const CardComponent = ({ items }) => {
+const CardComponent = ({ product }) => {
   const dispatch = useDispatch();
-  const text = useSelector((state) => state.text.text);
 
-  const handleAddToCart = (price) => {
-    dispatch(addToCart(price));
-    // console.log("add to cart");
+  const displayedPrice = useSelector((state) => state.product.displayedPrice);
+
+  const handleTogglePrice = () => {
+    dispatch(toggleDisplayedPrice());
   };
+
   return (
-    <div style={container}>
-      <div style={wrapper}>
-        <img style={images} src={items.image} alt="" />
-      </div>
-      <h3>{items.name}</h3>
-      <h3>{items.dollarPrice}</h3>
-      <button onClick={handleAddToCart}>add to cart</button>
+    <div className="product-card">
+      <img src={product.image} alt={product.name} />
+      <h3>{product.name}</h3>
+      <p>{product[displayedPrice]}</p>
+      <button onClick={handleTogglePrice}>Toggle Price</button>
     </div>
   );
 };
