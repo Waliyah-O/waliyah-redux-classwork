@@ -9,16 +9,16 @@ const CardComponent = ({ product }) => {
 
   const displayedPrice = useSelector((state) => state.product.displayedPrice);
 
-  const handleTogglePrice = () => {
-    dispatch(toggleDisplayedPrice());
-  };
+  // const handleTogglePrice = () => {
+  //   dispatch(toggleDisplayedPrice());
+  // };
 
   return (
     <div className="product-card">
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>{product[displayedPrice]}</p>
-      <button onClick={handleTogglePrice}>Toggle Price</button>
+      {/* <button onClick={handleTogglePrice}>Toggle Price</button> */}
     </div>
   );
 };
