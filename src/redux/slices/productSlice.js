@@ -5,7 +5,7 @@ import { dummyData } from "../../assets/dummyData";
 
 const initialState = {
   products: [...dummyData],
-  displayedPrice: "dollarPrice", // Default price property to display
+  displayedPrice: "dollarPrice", 
 };
 
 const productSlice = createSlice({

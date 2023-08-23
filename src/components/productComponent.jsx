@@ -2,7 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectObjectIndex, toggleDisplayedProperty } from '../redux/slices/priceSlice';
-import { dummyData } from '../assets/dummyData'; // Assuming this is your dummy data array
+import { dummyData } from '../assets/dummyData';
 
 const ProductComponent = () => {
   const dispatch = useDispatch();
