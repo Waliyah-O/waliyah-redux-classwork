@@ -20,9 +20,9 @@ const cartSlice = createSlice({
         state.items.push({ ...product, quantity: 1 });
       }
     },
-    // You can also add remove from cart, update quantity, and other actions here
   },
 });
+
 
 export const { addToCart } = cartSlice.actions;
 
