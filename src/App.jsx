@@ -14,6 +14,9 @@ const App = () => {
   
   const cartTotalPrice = useSelector(getCartTotalPrice);
 
+  const dollarButtonStyle = { backgroundColor: "red", color: "white", width: '200px'  };
+  const nairaButtonStyle = { backgroundColor: "green", color: "white", width: '200px' };
+
   return (
     <div
       style={{ display: "flex", width: "100vw", height: "80vh", gap: "2em" }}
@@ -27,9 +30,9 @@ const App = () => {
           />
         ))}
       </div>
-      <div>
-        <ChangeTextButton buttonText="NGN" />
-        <ChangeTextButton buttonText="USD" />
+      <div style={{ display: "flex", flexDirection: 'column', gap: '2em' }}>
+        <ChangeTextButton buttonText="NGN" buttonStyle={nairaButtonStyle}  />
+        <ChangeTextButton buttonText="USD" buttonStyle={dollarButtonStyle} />
         <p>Total items in cart: {cartItemCount}</p>
         <p>Total price of items in cart: {cartTotalPrice}</p>
       </div>

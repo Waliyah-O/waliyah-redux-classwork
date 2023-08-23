@@ -3,7 +3,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { toggleDisplayedPrice } from "../redux/slices/productSlice";
 
-const ChangeTextButton = ({ buttonText }) => {
+const ChangeTextButton = ({ buttonText, buttonStyle }) => {
   const dispatch = useDispatch();
 
   const handleTogglePrice = () => {
@@ -12,7 +12,7 @@ const ChangeTextButton = ({ buttonText }) => {
 
   return (
     <div>
-      <button onClick={handleTogglePrice}>{buttonText}</button>
+      <button onClick={handleTogglePrice} style={buttonStyle}>{buttonText}</button>
     </div>
   );
 };
