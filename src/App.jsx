@@ -3,11 +3,16 @@ import { dummyData } from "./assets/dummyData";
 import { useSelector } from "react-redux";
 import ChangeTextButton from "./components/CustomButton";
 import CardComponent from "./components/CardComponent";
-import { getCartItemCount } from "./redux/slices/addToCartSlice";
+import {
+  getCartItemCount,
+  getCartTotalPrice,
+} from "./redux/slices/addToCartSlice";
 
 const App = () => {
   const displayedPrice = useSelector((state) => state.product.displayedPrice);
   const cartItemCount = useSelector(getCartItemCount);
+  
+  const cartTotalPrice = useSelector(getCartTotalPrice);
 
   return (
     <div
@@ -26,6 +31,7 @@ const App = () => {
         <ChangeTextButton buttonText="NGN" />
         <ChangeTextButton buttonText="USD" />
         <p>Total items in cart: {cartItemCount}</p>
+        <p>Total price of items in cart: {cartTotalPrice}</p>
       </div>
     </div>
   );
