@@ -28,4 +28,3 @@ export const dummyData = [
     nairaPrice: "₦730,000",
   },
 ];
-

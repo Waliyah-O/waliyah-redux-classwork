@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
@@ -15,16 +14,15 @@ const CardComponent = ({ product }) => {
   // const handleTogglePrice = () => {
   //   dispatch(toggleDisplayedPrice());
   // };
+  const divStyles = {
+    height: "400px",
+    width: "250px",
+    display: "flex",
+    flexDirection: "column",
+  };
 
   return (
-    <div
-      style={{
-        height: "400px",
-        width: "250px",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <div style={divStyles}>
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>{product[displayedPrice]}</p>

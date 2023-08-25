@@ -18,9 +18,6 @@ const cartSlice = createSlice({
       } else {
         state.items.push({ ...product, quantity: 1 });
       }
-    },
-    addToPrice: (state, action) => {
-      console.log('price total');
     }
   },
 });

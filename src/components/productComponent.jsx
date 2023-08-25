@@ -1,5 +1,4 @@
-// ProductComponent.js
-import React from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { selectObjectIndex, toggleDisplayedProperty } from '../redux/slices/priceSlice';
 import { dummyData } from '../assets/dummyData';
